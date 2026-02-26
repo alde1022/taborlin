@@ -1,15 +1,21 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { updates } from './data/updates';
 
 export const metadata: Metadata = {
   title: 'Taborlin — We build tools for the internet.',
-  description: 'Taborlin is a product studio that builds, launches, and grows software products.',
+  description:
+    'Taborlin is a product studio that builds, launches, and grows software products including Spatix, CheapTokens, and GISTools.',
   openGraph: {
-    title: 'Taborlin',
-    description: 'We build tools for the internet.',
+    title: 'Taborlin — We build tools for the internet.',
+    description:
+      'Product studio building Spatix, CheapTokens, GISTools, and more.',
     url: 'https://taborlin.co',
     siteName: 'Taborlin',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://taborlin.co',
   },
 };
 
@@ -34,27 +40,6 @@ const projects = [
     description: 'GIS file conversion and analysis tools.',
     status: 'active' as const,
     tags: ['GIS', 'Developer Tools'],
-  },
-];
-
-const updates = [
-  {
-    slug: 'building-atlas',
-    title: 'Building Atlas',
-    date: '2026-02-13',
-    preview: 'We built an internal dashboard to manage all our projects in one place.',
-  },
-  {
-    slug: 'why-taborlin',
-    title: 'Why Taborlin',
-    date: '2026-02-01',
-    preview: 'On renaming from 119th Consulting to Atmos Labs to Taborlin, and what the company is becoming.',
-  },
-  {
-    slug: 'spatix-launch',
-    title: 'Launching Spatix',
-    date: '2026-01-15',
-    preview: 'Making map creation accessible to everyone, not just GIS professionals.',
   },
 ];
 
