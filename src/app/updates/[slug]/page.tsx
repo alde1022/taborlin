@@ -1,7 +1,39 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { updates, getUpdate, getAllSlugs } from '../../data/updates';
+
+function renderWithLinks(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener"
+        className="text-blue-400 hover:text-blue-300 transition-colors"
+      >
+        {match[1]}
+      </a>,
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -130,7 +162,7 @@ export default async function UpdatePage({
           <div className="prose-custom">
             {post.content.split('\n\n').map((paragraph, i) => (
               <p key={i} className="text-[#a1a1aa] leading-relaxed mb-5">
-                {paragraph}
+                {renderWithLinks(paragraph)}
               </p>
             ))}
           </div>

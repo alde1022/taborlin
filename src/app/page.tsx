@@ -107,7 +107,7 @@ function Projects() {
               key={project.name}
               href={project.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group block bg-[#0f0f14] border border-[#1f1f28] rounded-xl p-6 hover:border-[#2a2a35] transition-colors"
             >
               <div className="flex items-center gap-2 mb-3">
