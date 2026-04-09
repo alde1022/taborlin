@@ -5,7 +5,7 @@ import { updates } from '../data/updates';
 export const metadata: Metadata = {
   title: 'Writing',
   description:
-    'Notes on building, launching, and shipping software products — by Alex De La Torre.',
+    'Notes on building products, going to market, and shipping — from Taborlin.',
   alternates: {
     canonical: 'https://taborlin.co/updates',
   },
@@ -20,14 +20,14 @@ export default function UpdatesPage() {
             href="/"
             className="text-[#fafafa] text-sm font-semibold tracking-tight"
           >
-            Alex De La Torre
+            Taborlin
           </Link>
           <div className="flex items-center gap-6 sm:gap-8">
             <Link
-              href="/#projects"
+              href="/#work"
               className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
             >
-              Projects
+              Work
             </Link>
             <Link
               href="/updates"
@@ -50,7 +50,7 @@ export default function UpdatesPage() {
           Writing
         </h1>
         <p className="text-sm text-[#a1a1aa] mb-16">
-          Notes on building, launching, and shipping.
+          Notes on building products, going to market, and shipping.
         </p>
 
         <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function UpdatesPage() {
 
       <footer className="py-8 border-t border-[#1f1f28]">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Alex De La Torre</p>
+          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Taborlin</p>
         </div>
       </footer>
     </div>

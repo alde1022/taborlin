@@ -51,16 +51,16 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     openGraph: {
-      title: `${post.title} — Alex De La Torre`,
+      title: `${post.title} — Taborlin`,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
       url: `https://taborlin.co/updates/${slug}`,
-      siteName: 'Alex De La Torre',
+      siteName: 'Taborlin',
     },
     twitter: {
       card: 'summary',
-      title: `${post.title} — Alex De La Torre`,
+      title: `${post.title} — Taborlin`,
       description: post.description,
     },
     alternates: {
@@ -92,13 +92,13 @@ export default async function UpdatePage({
     datePublished: post.date,
     url: `https://taborlin.co/updates/${slug}`,
     author: {
-      '@type': 'Person',
-      name: 'Alex De La Torre',
+      '@type': 'Organization',
+      name: 'Taborlin',
       url: 'https://taborlin.co',
     },
     publisher: {
-      '@type': 'Person',
-      name: 'Alex De La Torre',
+      '@type': 'Organization',
+      name: 'Taborlin',
       url: 'https://taborlin.co',
     },
   };
@@ -116,14 +116,14 @@ export default async function UpdatePage({
             href="/"
             className="text-[#fafafa] text-sm font-semibold tracking-tight"
           >
-            Alex De La Torre
+            Taborlin
           </Link>
           <div className="flex items-center gap-6 sm:gap-8">
             <Link
-              href="/#projects"
+              href="/#work"
               className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
             >
-              Projects
+              Work
             </Link>
             <Link
               href="/updates"
@@ -206,7 +206,7 @@ export default async function UpdatePage({
 
       <footer className="py-8 border-t border-[#1f1f28]">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Alex De La Torre</p>
+          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Taborlin</p>
         </div>
       </footer>
     </div>
