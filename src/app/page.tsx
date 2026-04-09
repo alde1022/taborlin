@@ -3,15 +3,15 @@ import type { Metadata } from 'next';
 import { updates } from './data/updates';
 
 export const metadata: Metadata = {
-  title: 'Taborlin — We build tools for the internet.',
+  title: 'Alex De La Torre — Software Engineer & Builder',
   description:
-    'Taborlin is a product studio that builds, launches, and grows software products including Spatix, CheapTokens, and GISTools.',
+    'Software engineer who builds and ships full-stack products. Creator of Spatix, CheapTokens, and GISTools.',
   openGraph: {
-    title: 'Taborlin — We build tools for the internet.',
+    title: 'Alex De La Torre — Software Engineer & Builder',
     description:
-      'Product studio building Spatix, CheapTokens, GISTools, and more.',
+      'Software engineer who builds and ships full-stack products. Creator of Spatix, CheapTokens, and GISTools.',
     url: 'https://taborlin.co',
-    siteName: 'Taborlin',
+    siteName: 'Alex De La Torre',
     type: 'website',
   },
   alternates: {
@@ -23,50 +23,69 @@ const projects = [
   {
     name: 'Spatix',
     url: 'https://spatix.io',
-    description: 'Create maps in seconds. No GIS skills needed.',
-    status: 'active' as const,
-    tags: ['GIS', 'SaaS'],
+    headline: 'Map creation tool for non-GIS users',
+    description:
+      'Web-based platform that lets anyone create, style, and share maps in seconds — no GIS expertise required. Upload a CSV, pick a style, get a shareable map.',
+    tech: ['Next.js', 'TypeScript', 'Mapbox GL', 'PostgreSQL', 'Vercel'],
+    role: 'Solo developer — designed, built, and launched end-to-end',
   },
   {
     name: 'CheapTokens',
     url: 'https://cheaptokens.ai',
-    description: 'Discounted Venice AI credits via daily auctions.',
-    status: 'active' as const,
-    tags: ['AI', 'Marketplace'],
+    headline: 'AI credit marketplace with daily auctions',
+    description:
+      'Marketplace for discounted AI inference credits via real-time auctions. Built a bidding engine, payment processing, and credit distribution system.',
+    tech: ['Next.js', 'TypeScript', 'Stripe', 'Real-time WebSockets', 'Vercel'],
+    role: 'Solo developer — architecture, auction engine, payments',
   },
   {
     name: 'GISTools',
     url: 'https://gistools.io',
-    description: 'GIS file conversion and analysis tools.',
-    status: 'active' as const,
-    tags: ['GIS', 'Developer Tools'],
+    headline: 'GIS file conversion and analysis utilities',
+    description:
+      'Developer tools for converting between GIS file formats (GeoJSON, Shapefile, KML, GPX) and running spatial analysis in the browser.',
+    tech: ['Next.js', 'TypeScript', 'GDAL/OGR', 'Web Workers'],
+    role: 'Solo developer — built conversion pipeline and browser-based processing',
+  },
+  {
+    name: 'Atlas',
+    headline: 'Internal operations dashboard',
+    description:
+      'Unified dashboard for managing multiple SaaS products — pulls data from GitHub, Vercel, Stripe, and analytics into a single view per project.',
+    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'REST APIs', 'Stripe API'],
+    role: 'Solo developer — API integrations, data modeling, UI',
   },
 ];
 
-const statusColors = {
-  active: 'bg-green-500',
-  building: 'bg-yellow-500',
-  paused: 'bg-zinc-500',
+const skills = {
+  'Languages': ['TypeScript', 'JavaScript', 'Python', 'SQL', 'HTML/CSS'],
+  'Frontend': ['React', 'Next.js', 'Tailwind CSS', 'Mapbox GL JS'],
+  'Backend': ['Node.js', 'Prisma', 'REST APIs', 'WebSockets'],
+  'Infrastructure': ['Vercel', 'PostgreSQL', 'Stripe', 'GitHub Actions'],
+  'Domains': ['GIS / Geospatial', 'AI / LLMs', 'SaaS', 'Developer Tools'],
 };
 
 function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#06060B]/80 backdrop-blur-md border-b border-[#1f1f28]/50">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-[#fafafa] text-lg font-serif font-semibold tracking-tight">
-          Taborlin
+      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+        <Link href="/" className="text-[#fafafa] text-sm font-semibold tracking-tight">
+          Alex De La Torre
         </Link>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6 sm:gap-8">
           <a href="#projects" className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors">
             Projects
           </a>
-          <a href="#about" className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors">
-            About
+          <a href="#skills" className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors hidden sm:block">
+            Skills
           </a>
           <Link href="/updates" className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors">
-            Updates
+            Writing
           </Link>
-          <a href="#contact" className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors">
+          <a
+            href="mailto:alex@taborlin.co"
+            className="text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-3.5 py-1.5 rounded-md font-medium"
+          >
             Contact
           </a>
         </div>
@@ -77,20 +96,35 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="min-h-[85vh] flex items-center">
-      <div className="max-w-5xl mx-auto px-6 w-full">
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-medium text-[#fafafa] tracking-tight leading-[1.1]">
-          We build tools<br />for the internet.
-        </h1>
-        <p className="mt-6 text-lg sm:text-xl text-[#a1a1aa] max-w-xl leading-relaxed">
-          Taborlin is a product studio that builds, launches, and grows software products.
-        </p>
-        <a
-          href="#projects"
-          className="inline-block mt-10 text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors border-b border-[#a1a1aa]/30 hover:border-[#fafafa]/50 pb-0.5"
-        >
-          See what we&apos;re building
-        </a>
+    <section className="pt-32 sm:pt-40 pb-20 sm:pb-28">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="animate-fade-in">
+          <p className="text-sm text-[#a1a1aa] uppercase tracking-widest mb-4">Software Engineer</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#fafafa] tracking-tight leading-[1.1]">
+            I build and ship<br />
+            <span className="text-[#a1a1aa]">full-stack products.</span>
+          </h1>
+          <p className="mt-6 text-base sm:text-lg text-[#a1a1aa] max-w-xl leading-relaxed">
+            Software engineer focused on building products from zero to launch.
+            I&apos;ve designed, developed, and shipped multiple SaaS applications
+            across GIS, AI, and developer tools — handling everything from
+            architecture to deployment.
+          </p>
+          <div className="flex items-center gap-4 mt-8">
+            <a
+              href="#projects"
+              className="text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-5 py-2.5 rounded-md font-medium"
+            >
+              View my work
+            </a>
+            <a
+              href="mailto:alex@taborlin.co"
+              className="text-sm text-[#fafafa] border border-[#2a2a35] hover:border-[#3a3a45] transition-colors px-5 py-2.5 rounded-md font-medium"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -98,38 +132,53 @@ function Hero() {
 
 function Projects() {
   return (
-    <section id="projects" className="py-24">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-serif text-3xl font-medium text-[#fafafa] mb-12">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="projects" className="py-20 sm:py-24">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-[#fafafa] mb-2">Projects</h2>
+          <p className="text-sm text-[#a1a1aa]">Products I&apos;ve built and shipped</p>
+        </div>
+        <div className="space-y-4">
           {projects.map((project) => (
-            <a
+            <div
               key={project.name}
-              href={project.url}
-              target="_blank"
-              rel="noopener"
-              className="group block bg-[#0f0f14] border border-[#1f1f28] rounded-xl p-6 hover:border-[#2a2a35] transition-colors"
+              className="group bg-[#0a0a10] border border-[#1f1f28] rounded-xl p-6 sm:p-8 hover:border-[#2a2a35] transition-all"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <h3 className="text-lg font-medium text-[#fafafa] group-hover:text-blue-400 transition-colors">
-                  {project.name}
-                </h3>
-                <span className={`w-2 h-2 rounded-full ${statusColors[project.status]}`} />
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4 mb-3">
+                <div className="flex items-center gap-3">
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener"
+                      className="text-xl font-semibold text-[#fafafa] hover:text-blue-400 transition-colors"
+                    >
+                      {project.name}
+                      <span className="inline-block ml-1.5 text-[#a1a1aa] text-sm group-hover:text-blue-400 transition-colors">&#8599;</span>
+                    </a>
+                  ) : (
+                    <h3 className="text-xl font-semibold text-[#fafafa]">{project.name}</h3>
+                  )}
+                  <span className="text-sm text-[#a1a1aa]/70">{project.headline}</span>
+                </div>
               </div>
-              <p className="text-sm text-[#a1a1aa] leading-relaxed mb-4">
+              <p className="text-sm text-[#a1a1aa] leading-relaxed mb-4 max-w-2xl">
                 {project.description}
               </p>
-              <div className="flex gap-2">
-                {project.tags.map((tag) => (
+              <p className="text-xs text-[#a1a1aa]/50 mb-4 italic">
+                {project.role}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((t) => (
                   <span
-                    key={tag}
-                    className="text-xs text-[#a1a1aa]/70 bg-[#1f1f28] px-2 py-0.5 rounded"
+                    key={t}
+                    className="text-xs text-[#a1a1aa]/80 bg-[#16161e] border border-[#1f1f28] px-2.5 py-1 rounded-md"
                   >
-                    {tag}
+                    {t}
                   </span>
                 ))}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -137,21 +186,52 @@ function Projects() {
   );
 }
 
-function About() {
+function Skills() {
   return (
-    <section id="about" className="py-24 border-t border-[#1f1f28]">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-serif text-3xl font-medium text-[#fafafa] mb-8">About</h2>
-        <div className="max-w-2xl space-y-5 text-[#a1a1aa] leading-relaxed">
+    <section id="skills" className="py-20 sm:py-24 border-t border-[#1f1f28]">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-[#fafafa] mb-2">Skills & Technologies</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category}>
+              <h3 className="text-xs text-[#a1a1aa]/50 uppercase tracking-widest mb-3">{category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <span
+                    key={item}
+                    className="text-sm text-[#c8c8d0] bg-[#0f0f14] border border-[#1f1f28] px-3 py-1.5 rounded-md"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Background() {
+  return (
+    <section id="about" className="py-20 sm:py-24 border-t border-[#1f1f28]">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="mb-8">
+          <h2 className="text-2xl font-semibold text-[#fafafa] mb-2">Background</h2>
+        </div>
+        <div className="max-w-2xl space-y-4 text-[#a1a1aa] leading-relaxed text-sm sm:text-base">
           <p>
-            Taborlin builds internet products. We focus on tools that are useful,
-            well-crafted, and solve real problems — from geospatial software to
-            AI marketplaces.
+            I&apos;m a software engineer who thrives on building products from the ground up.
+            I operate under <span className="text-[#fafafa]">Taborlin</span> — a solo product studio
+            where I handle the full stack: product design, engineering, infrastructure, and launch.
           </p>
           <p>
-            We stay small on purpose. Small teams ship faster, make better decisions,
-            and build things they&apos;re proud of. Every product we launch is something
-            we&apos;d want to use ourselves.
+            My work spans geospatial software, AI marketplaces, and developer tools.
+            I care about shipping fast, writing clean code, and solving real problems
+            with minimal complexity.
           </p>
           <p className="text-[#a1a1aa]/60 text-sm">
             Previously operated as 119th Consulting and Atmos Labs.
@@ -162,37 +242,43 @@ function About() {
   );
 }
 
-function Updates() {
+function Writing() {
+  const recent = updates.slice(0, 3);
   return (
-    <section id="updates" className="py-24 border-t border-[#1f1f28]">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="writing" className="py-20 sm:py-24 border-t border-[#1f1f28]">
+      <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-baseline justify-between mb-12">
-          <h2 className="font-serif text-3xl font-medium text-[#fafafa]">Updates</h2>
+          <div>
+            <h2 className="text-2xl font-semibold text-[#fafafa] mb-2">Writing</h2>
+            <p className="text-sm text-[#a1a1aa]">Notes on building and shipping</p>
+          </div>
           <Link
             href="/updates"
             className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
           >
-            View all
+            View all &rarr;
           </Link>
         </div>
-        <div className="space-y-8">
-          {updates.map((post) => (
+        <div className="space-y-6">
+          {recent.map((post) => (
             <Link
               key={post.slug}
               href={`/updates/${post.slug}`}
-              className="group block"
+              className="group block bg-[#0a0a10] border border-[#1f1f28] rounded-xl p-5 sm:p-6 hover:border-[#2a2a35] transition-all"
             >
-              <time className="text-xs text-[#a1a1aa]/60 uppercase tracking-wider">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-              <h3 className="text-lg text-[#fafafa] mt-1 group-hover:text-blue-400 transition-colors">
-                {post.title}
-              </h3>
-              <p className="text-sm text-[#a1a1aa] mt-1">{post.preview}</p>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
+                <h3 className="text-base text-[#fafafa] group-hover:text-blue-400 transition-colors font-medium">
+                  {post.title}
+                </h3>
+                <time className="text-xs text-[#a1a1aa]/50 shrink-0">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+              </div>
+              <p className="text-sm text-[#a1a1aa] mt-2">{post.preview}</p>
             </Link>
           ))}
         </div>
@@ -201,28 +287,34 @@ function Updates() {
   );
 }
 
+function Contact() {
+  return (
+    <section id="contact" className="py-20 sm:py-24 border-t border-[#1f1f28]">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-2xl font-semibold text-[#fafafa] mb-3">Let&apos;s connect</h2>
+        <p className="text-sm text-[#a1a1aa] mb-8 max-w-md mx-auto">
+          Interested in working together, or just want to say hello? I&apos;d love to hear from you.
+        </p>
+        <a
+          href="mailto:alex@taborlin.co"
+          className="inline-block text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-6 py-3 rounded-md font-medium"
+        >
+          alex@taborlin.co
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
-    <footer id="contact" className="py-16 border-t border-[#1f1f28]">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-          <div>
-            <h2 className="font-serif text-2xl font-medium text-[#fafafa] mb-2">Get in touch</h2>
-            <a
-              href="mailto:alex@taborlin.co"
-              className="text-[#a1a1aa] hover:text-[#fafafa] transition-colors text-sm"
-            >
-              alex@taborlin.co
-            </a>
-          </div>
-          <div className="flex gap-6 text-sm text-[#a1a1aa]">
-            <a href="#projects" className="hover:text-[#fafafa] transition-colors">Projects</a>
-            <a href="#about" className="hover:text-[#fafafa] transition-colors">About</a>
-            <Link href="/updates" className="hover:text-[#fafafa] transition-colors">Updates</Link>
-          </div>
-        </div>
-        <div className="mt-12 pt-6 border-t border-[#1f1f28]">
-          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Taborlin</p>
+    <footer className="py-8 border-t border-[#1f1f28]">
+      <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Alex De La Torre</p>
+        <div className="flex gap-6 text-xs text-[#a1a1aa]/40">
+          <a href="#projects" className="hover:text-[#a1a1aa] transition-colors">Projects</a>
+          <Link href="/updates" className="hover:text-[#a1a1aa] transition-colors">Writing</Link>
+          <a href="mailto:alex@taborlin.co" className="hover:text-[#a1a1aa] transition-colors">Email</a>
         </div>
       </div>
     </footer>
@@ -233,11 +325,13 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#06060B]">
       <Navbar />
-      <main className="pt-16">
+      <main>
         <Hero />
         <Projects />
-        <About />
-        <Updates />
+        <Skills />
+        <Background />
+        <Writing />
+        <Contact />
       </main>
       <Footer />
     </div>

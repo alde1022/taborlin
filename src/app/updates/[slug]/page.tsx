@@ -51,16 +51,16 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     openGraph: {
-      title: `${post.title} — Taborlin`,
+      title: `${post.title} — Alex De La Torre`,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
       url: `https://taborlin.co/updates/${slug}`,
-      siteName: 'Taborlin',
+      siteName: 'Alex De La Torre',
     },
     twitter: {
       card: 'summary',
-      title: `${post.title} — Taborlin`,
+      title: `${post.title} — Alex De La Torre`,
       description: post.description,
     },
     alternates: {
@@ -92,13 +92,13 @@ export default async function UpdatePage({
     datePublished: post.date,
     url: `https://taborlin.co/updates/${slug}`,
     author: {
-      '@type': 'Organization',
-      name: 'Taborlin',
+      '@type': 'Person',
+      name: 'Alex De La Torre',
       url: 'https://taborlin.co',
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Taborlin',
+      '@type': 'Person',
+      name: 'Alex De La Torre',
       url: 'https://taborlin.co',
     },
   };
@@ -111,14 +111,14 @@ export default async function UpdatePage({
       />
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#06060B]/80 backdrop-blur-md border-b border-[#1f1f28]/50">
-        <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link
             href="/"
-            className="text-[#fafafa] text-lg font-serif font-semibold tracking-tight"
+            className="text-[#fafafa] text-sm font-semibold tracking-tight"
           >
-            Taborlin
+            Alex De La Torre
           </Link>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 sm:gap-8">
             <Link
               href="/#projects"
               className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
@@ -126,17 +126,17 @@ export default async function UpdatePage({
               Projects
             </Link>
             <Link
-              href="/#about"
-              className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
-            >
-              About
-            </Link>
-            <Link
               href="/updates"
               className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
             >
-              Updates
+              Writing
             </Link>
+            <a
+              href="mailto:alex@taborlin.co"
+              className="text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-3.5 py-1.5 rounded-md font-medium"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </nav>
@@ -146,17 +146,17 @@ export default async function UpdatePage({
           href="/updates"
           className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors mb-8 inline-block"
         >
-          &larr; All updates
+          &larr; All posts
         </Link>
         <article>
-          <time className="text-xs text-[#a1a1aa]/60 uppercase tracking-wider">
+          <time className="text-xs text-[#a1a1aa]/50 uppercase tracking-wider">
             {new Date(post.date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
             })}
           </time>
-          <h1 className="font-serif text-4xl font-medium text-[#fafafa] mt-2 mb-8">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[#fafafa] mt-2 mb-8 tracking-tight">
             {post.title}
           </h1>
           <div className="prose-custom">
@@ -175,7 +175,7 @@ export default async function UpdatePage({
                 href={`/updates/${prevPost.slug}`}
                 className="group text-sm"
               >
-                <span className="text-[#a1a1aa]/60 text-xs">
+                <span className="text-[#a1a1aa]/50 text-xs">
                   &larr; Older
                 </span>
                 <span className="block text-[#a1a1aa] group-hover:text-[#fafafa] transition-colors mt-0.5">
@@ -190,7 +190,7 @@ export default async function UpdatePage({
                 href={`/updates/${nextPost.slug}`}
                 className="group text-sm text-right"
               >
-                <span className="text-[#a1a1aa]/60 text-xs">
+                <span className="text-[#a1a1aa]/50 text-xs">
                   Newer &rarr;
                 </span>
                 <span className="block text-[#a1a1aa] group-hover:text-[#fafafa] transition-colors mt-0.5">
@@ -204,9 +204,9 @@ export default async function UpdatePage({
         )}
       </main>
 
-      <footer className="py-12 border-t border-[#1f1f28]">
+      <footer className="py-8 border-t border-[#1f1f28]">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Taborlin</p>
+          <p className="text-xs text-[#a1a1aa]/40">&copy; 2026 Alex De La Torre</p>
         </div>
       </footer>
     </div>
