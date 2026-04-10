@@ -171,24 +171,39 @@ function Stats() {
   );
 }
 
-const logos = ['Esri', 'DTN', 'Enterprise Holdings', 'Grubhub', 'Zeus Weather', 'Enline Energy', 'Milsoft', 'Everbridge'];
+function Wordmark({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return (
+    <span className={`shrink-0 px-7 sm:px-10 select-none text-[#a1a1aa]/[0.18] ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+function LogoSet() {
+  return (
+    <>
+      <Wordmark className="text-[15px] sm:text-lg font-black tracking-[0.08em] uppercase">Esri</Wordmark>
+      <Wordmark className="text-base sm:text-xl font-black tracking-[0.2em] uppercase">DTN</Wordmark>
+      <Wordmark className="text-[13px] sm:text-base font-semibold tracking-[0.04em]">Enterprise Holdings</Wordmark>
+      <Wordmark className="text-[15px] sm:text-lg font-bold tracking-[0.01em] lowercase">grubhub</Wordmark>
+      <Wordmark className="text-[13px] sm:text-base font-semibold tracking-[0.06em]">Zeus Weather</Wordmark>
+      <Wordmark className="text-[13px] sm:text-base font-semibold tracking-[0.04em]">Enline Energy</Wordmark>
+      <Wordmark className="text-[15px] sm:text-lg font-bold tracking-[0.06em]">Milsoft</Wordmark>
+      <Wordmark className="text-[14px] sm:text-[17px] font-semibold tracking-[0.08em] uppercase">Everbridge</Wordmark>
+    </>
+  );
+}
 
 function LogoStrip() {
   return (
     <section className="pb-20 sm:pb-24">
-      <div className="max-w-4xl mx-auto px-6 mb-6">
-        <p className="text-xs text-[#a1a1aa]/40 uppercase tracking-widest">Worked with across prior roles and engagements</p>
+      <div className="max-w-4xl mx-auto px-6 mb-8 text-center">
+        <p className="text-xs text-[#a1a1aa]/40 uppercase tracking-widest">Selected companies worked with</p>
       </div>
       <div className="marquee-mask overflow-hidden">
-        <div className="marquee-track flex w-max">
-          {[...logos, ...logos].map((name, i) => (
-            <span
-              key={`${name}-${i}`}
-              className="shrink-0 px-8 sm:px-10 text-sm sm:text-base font-semibold text-[#a1a1aa]/25 uppercase tracking-[0.15em] select-none"
-            >
-              {name}
-            </span>
-          ))}
+        <div className="marquee-track flex items-center w-max">
+          <LogoSet />
+          <LogoSet />
         </div>
       </div>
     </section>
