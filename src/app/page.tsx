@@ -1,13 +1,4 @@
 import type { Metadata } from 'next';
-import {
-  EsriLogo,
-  DTNLogo,
-  EnterpriseHoldingsLogo,
-  GrubhubLogo,
-  EnlineEnergyLogo,
-  MilsoftLogo,
-  EverbridgeLogo,
-} from '@/components/logos';
 
 export const metadata: Metadata = {
   title: 'Taborlin — Software, Data, and AI',
@@ -49,34 +40,35 @@ const work: {
   pillars: Pillar[];
 }[] = [
   {
-    title: 'WeatherXM',
-    label: 'Enterprise Business Development',
-    description:
-      'Led enterprise BD, generating $1M+ in revenue. Structured deployments of weather data infrastructure, hardware, and APIs for energy and infrastructure customers.',
-    pillars: ['Revenue & Partnerships', 'GTM & Strategy'],
-  },
-  {
-    title: 'Enline Energy',
-    label: 'Strategic Partnership',
-    description:
-      'Structured and closed a pilot deploying hyperlocal weather stations and data API integrations for utility grid operations — navigating compliance, hardware logistics, and multi-stakeholder coordination.',
-    pillars: ['Revenue & Partnerships', 'Product & Execution'],
-  },
-  {
     title: 'CheapTokens',
     label: 'AI Compute Marketplace',
     url: 'https://cheaptokens.ai',
     description:
-      'Built and launched an AI credit marketplace with daily auctions and real-time bidding. Currently onboarding early users and partners.',
+      'Built and launched an AI credit marketplace with daily auctions and real-time bidding. Designed the product, pricing mechanics, and payment infrastructure from scratch. Currently onboarding early users and partners.',
     pillars: ['Product & Execution', 'Software, Data & AI'],
   },
   {
     title: 'Spatix',
-    label: 'GIS Platform & Ecosystem',
+    label: 'GIS Platform',
     url: 'https://spatix.io',
     description:
-      'Built and shipped a map creation platform for non-GIS users. Paired with GISTools.io to create a product ecosystem capturing both technical and non-technical users through organic acquisition.',
+      'Identified a gap between enterprise GIS tools and what most people actually need. Built and shipped a map creation platform for non-technical users — marketers, journalists, researchers. Organic acquisition through SEO and product-led growth.',
     pillars: ['Product & Execution', 'GTM & Strategy'],
+  },
+  {
+    title: 'GISTools',
+    label: 'Developer Tools & Ecosystem',
+    url: 'https://gistools.io',
+    description:
+      'Built a utility suite for GIS file conversion and spatial analysis that runs entirely in the browser. Designed as an ecosystem complement to Spatix — capturing developer traffic through SEO and cross-selling into the platform.',
+    pillars: ['GTM & Strategy', 'Software, Data & AI'],
+  },
+  {
+    title: 'Atlas',
+    label: 'Internal Operations Platform',
+    description:
+      'Built an internal command center to manage multiple SaaS products from a single view — dev status, user metrics, revenue, and roadmap. The kind of operational tooling you build when running several products and need signal, not noise.',
+    pillars: ['Product & Execution', 'Software, Data & AI'],
   },
 ];
 
@@ -101,6 +93,20 @@ const capabilities = [
     description:
       'Full-stack product builds, data infrastructure, and AI-native workflows. Technical enough to ship production software, commercially focused on what moves the needle.',
   },
+];
+
+const companies = [
+  { name: 'Esri', className: 'font-black tracking-[0.06em] uppercase' },
+  { name: 'DTN', className: 'font-black tracking-[0.2em] uppercase text-lg sm:text-xl' },
+  { name: 'Enterprise', className: 'font-medium tracking-[0.04em]' },
+  { name: 'Grubhub', className: 'font-extrabold tracking-tight lowercase' },
+  { name: 'Orpheus AI', className: 'font-semibold tracking-[0.04em]' },
+  { name: 'Enline', className: 'font-semibold tracking-[0.04em]' },
+  { name: 'Milsoft', className: 'font-bold tracking-[0.05em]' },
+  { name: 'Everbridge', className: 'font-semibold tracking-[0.08em] uppercase text-[13px] sm:text-sm' },
+  { name: 'AIG', className: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl' },
+  { name: 'Trueo', className: 'font-bold tracking-[0.06em]' },
+  { name: 'Crop Risk', className: 'font-medium tracking-[0.03em]' },
 ];
 
 function Navbar() {
@@ -180,62 +186,6 @@ function Stats() {
   );
 }
 
-function OrpheusLogo({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Orpheus AI">
-      <path d="M14.5 1L9.5 10.5h4L7.5 23l3-9.5H6.5z" />
-    </svg>
-  );
-}
-
-function TrueoLogo({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Trueo">
-      <path d="M12 2L3 7.5v9L12 22l9-5.5v-9L12 2zm0 1.5l7.5 4.6v.4L12 13 4.5 8.5v-.4L12 3.5zM4.5 9.5L11.5 14v7l-7-4.3V9.5zm8 4.5l7-4.5v7.2l-7 4.3v-7z" />
-    </svg>
-  );
-}
-
-const logoWrapClass = "shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] flex items-center";
-
-function LogoSet() {
-  return (
-    <>
-      <span className={logoWrapClass}>
-        <EsriLogo height="20" className="h-5 sm:h-6" />
-      </span>
-      <span className={logoWrapClass}>
-        <DTNLogo height="20" className="h-5 sm:h-6" />
-      </span>
-      <span className={logoWrapClass}>
-        <EnterpriseHoldingsLogo height="14" className="h-3.5 sm:h-4" />
-      </span>
-      <span className={logoWrapClass}>
-        <GrubhubLogo height="18" className="h-[18px] sm:h-5" />
-      </span>
-      <span className={`${logoWrapClass} gap-2`}>
-        <OrpheusLogo className="h-5 sm:h-6" />
-        <span className="text-[13px] sm:text-base font-semibold tracking-[0.04em]">Orpheus AI</span>
-      </span>
-      <span className={logoWrapClass}>
-        <EnlineEnergyLogo height="14" className="h-3.5 sm:h-4" />
-      </span>
-      <span className={logoWrapClass}>
-        <MilsoftLogo height="16" className="h-4 sm:h-[18px]" />
-      </span>
-      <span className={logoWrapClass}>
-        <EverbridgeLogo height="14" className="h-3.5 sm:h-4" />
-      </span>
-      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-xl sm:text-2xl font-black tracking-[0.08em] uppercase">AIG</span>
-      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-medium tracking-[0.04em]">Crop Risk Insurance</span>
-      <span className={`${logoWrapClass} gap-2`}>
-        <TrueoLogo className="h-5 sm:h-6" />
-        <span className="text-base sm:text-lg font-bold tracking-[0.08em]">Trueo</span>
-      </span>
-    </>
-  );
-}
-
 function LogoStrip() {
   return (
     <section className="pb-20 sm:pb-24">
@@ -244,8 +194,14 @@ function LogoStrip() {
       </div>
       <div className="marquee-mask overflow-hidden">
         <div className="marquee-track flex items-center w-max">
-          <LogoSet />
-          <LogoSet />
+          {[...companies, ...companies].map((co, i) => (
+            <span
+              key={`${co.name}-${i}`}
+              className={`shrink-0 px-7 sm:px-10 select-none text-[#a1a1aa]/[0.3] text-sm sm:text-base ${co.className}`}
+            >
+              {co.name}
+            </span>
+          ))}
         </div>
       </div>
     </section>
@@ -258,7 +214,7 @@ function Work() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-[#fafafa] mb-2">Selected Work</h2>
-          <p className="text-sm text-[#a1a1aa]">Enterprise deals closed and products shipped</p>
+          <p className="text-sm text-[#a1a1aa]">Products built and shipped from zero</p>
         </div>
         <div className="space-y-4">
           {work.map((item) => (
