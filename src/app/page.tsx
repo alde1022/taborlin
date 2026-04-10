@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Taborlin — Software, Data, and AI',
   description:
-    'Building products and closing enterprise deals across software, data, and AI. $1M+ in enterprise revenue. Multiple products shipped from zero.',
+    'Building products and closing enterprise deals across software, data, and AI. $50M+ in opportunities influenced. Multiple products shipped from zero.',
   openGraph: {
     title: 'Taborlin — Software, Data, and AI',
     description:
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: '$50M+', label: 'Pipeline influenced' },
+  { value: '$50M+', label: 'In opportunities influenced' },
   { value: '25+', label: 'Partnerships closed' },
   { value: '4', label: 'Products shipped — and counting' },
 ];
@@ -131,7 +131,7 @@ function Hero() {
           </h1>
           <p className="mt-6 text-base sm:text-lg text-[#a1a1aa] max-w-2xl leading-relaxed">
             Taborlin ships products, structures enterprise deals, and executes go-to-market
-            strategy. $1M+ in enterprise revenue generated. Multiple products launched
+            strategy. $50M+ in opportunities influenced. Multiple products launched
             from zero.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -160,7 +160,7 @@ function Stats() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 border border-[#1f1f28] rounded-xl p-6 sm:p-8 bg-[#0a0a10]">
           {stats.map((stat, i) => (
-            <div key={stat.label} className={i < stats.length - 1 ? 'sm:border-r sm:border-[#1f1f28] sm:pr-6' : ''}>
+            <div key={stat.label} className={`text-center ${i < stats.length - 1 ? 'sm:border-r sm:border-[#1f1f28]' : ''}`}>
               <p className="text-2xl sm:text-3xl font-semibold text-[#fafafa] tracking-tight">{stat.value}</p>
               <p className="text-xs sm:text-sm text-[#a1a1aa]/60 mt-1">{stat.label}</p>
             </div>

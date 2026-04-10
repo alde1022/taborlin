@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: '%s — Taborlin',
   },
   description:
-    'Building products and closing enterprise deals across software, data, and AI. $1M+ in enterprise revenue. Multiple products shipped from zero.',
+    'Building products and closing enterprise deals across software, data, and AI. $50M+ in opportunities influenced. Multiple products shipped from zero.',
   openGraph: {
     title: 'Taborlin',
     description: 'Products and partnerships across software, data, and AI.',
