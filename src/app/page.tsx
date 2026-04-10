@@ -18,24 +18,40 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: '$1M+', label: 'Enterprise revenue generated' },
-  { value: '20+', label: 'Strategic partnerships closed' },
+  { value: '$50M+', label: 'Pipeline influenced' },
+  { value: '25+', label: 'Partnerships closed' },
+  { value: '4', label: 'Products shipped — and counting' },
 ];
 
-const work = [
+const pillars = [
+  'Revenue & Partnerships',
+  'GTM & Strategy',
+  'Product & Execution',
+  'Software, Data & AI',
+] as const;
+
+type Pillar = typeof pillars[number];
+
+const work: {
+  title: string;
+  label: string;
+  url?: string;
+  description: string;
+  pillars: Pillar[];
+}[] = [
   {
     title: 'WeatherXM',
     label: 'Enterprise Business Development',
     description:
       'Led enterprise BD, generating $1M+ in revenue. Structured deployments of weather data infrastructure, hardware, and APIs for energy and infrastructure customers.',
-    tags: ['Enterprise sales', 'Energy & infrastructure', 'Data + hardware + API deals'],
+    pillars: ['Revenue & Partnerships', 'GTM & Strategy'],
   },
   {
     title: 'Enline Energy',
     label: 'Strategic Partnership',
     description:
       'Structured and closed a pilot deploying hyperlocal weather stations and data API integrations for utility grid operations — navigating compliance, hardware logistics, and multi-stakeholder coordination.',
-    tags: ['Utility sector', 'Pilot to deployment', 'Cross-functional execution'],
+    pillars: ['Revenue & Partnerships', 'Product & Execution'],
   },
   {
     title: 'CheapTokens',
@@ -43,7 +59,7 @@ const work = [
     url: 'https://cheaptokens.ai',
     description:
       'Built and launched an AI credit marketplace with daily auctions and real-time bidding. Currently onboarding early users and partners.',
-    tags: ['AI infrastructure', 'Marketplace dynamics', 'Zero to launch'],
+    pillars: ['Product & Execution', 'Software, Data & AI'],
   },
   {
     title: 'Spatix',
@@ -51,30 +67,30 @@ const work = [
     url: 'https://spatix.io',
     description:
       'Built and shipped a map creation platform for non-GIS users. Paired with GISTools.io to create a product ecosystem capturing both technical and non-technical users through organic acquisition.',
-    tags: ['Vertical SaaS', 'Product-led growth', 'Ecosystem strategy'],
+    pillars: ['Product & Execution', 'GTM & Strategy'],
   },
 ];
 
 const capabilities = [
   {
-    title: 'Enterprise BD & Partnerships',
+    title: 'Revenue & Partnerships',
     description:
-      'Deal sourcing, executive relationship development, and partnership structuring across enterprise verticals. Direct experience navigating procurement, compliance, and multi-stakeholder sales cycles in energy and technology.',
+      'Enterprise deal structuring, executive relationship development, and strategic partnerships across energy, technology, and infrastructure. Direct experience navigating procurement, compliance, and multi-stakeholder sales cycles.',
   },
   {
-    title: 'Go-to-Market & Growth',
+    title: 'GTM & Strategy',
     description:
-      'Market positioning, pricing strategy, distribution, and organic acquisition. Product-led growth for SaaS products. Marketplace dynamics and partner channel development.',
+      'Market positioning, pricing strategy, distribution, and channel development. Product-led growth for SaaS. Marketplace dynamics and partner-driven go-to-market.',
   },
   {
-    title: 'Product Strategy & Execution',
+    title: 'Product & Execution',
     description:
       'Zero-to-one product development, rapid prototyping, and roadmap prioritization. Multi-product operations with a bias toward shipping fast and iterating on signal.',
   },
   {
-    title: 'AI-Native Operations',
+    title: 'Software, Data & AI',
     description:
-      'Building with AI as core operational leverage — from LLM-powered workflows to AI compute infrastructure. Technical enough to ship production products, commercially focused on what moves the needle.',
+      'Full-stack product builds, data infrastructure, and AI-native workflows. Technical enough to ship production software, commercially focused on what moves the needle.',
   },
 ];
 
@@ -142,7 +158,7 @@ function Stats() {
   return (
     <section className="pb-20 sm:pb-24">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 border border-[#1f1f28] rounded-xl p-6 sm:p-8 bg-[#0a0a10] max-w-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 border border-[#1f1f28] rounded-xl p-6 sm:p-8 bg-[#0a0a10]">
           {stats.map((stat, i) => (
             <div key={stat.label} className={i < stats.length - 1 ? 'sm:border-r sm:border-[#1f1f28] sm:pr-6' : ''}>
               <p className="text-2xl sm:text-3xl font-semibold text-[#fafafa] tracking-tight">{stat.value}</p>
@@ -189,12 +205,12 @@ function Work() {
                 {item.description}
               </p>
               <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
+                {item.pillars.map((pillar) => (
                   <span
-                    key={tag}
+                    key={pillar}
                     className="text-xs text-[#a1a1aa]/70 bg-[#16161e] border border-[#1f1f28] px-2.5 py-1 rounded-md"
                   >
-                    {tag}
+                    {pillar}
                   </span>
                 ))}
               </div>
