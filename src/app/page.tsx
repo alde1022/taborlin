@@ -171,6 +171,30 @@ function Stats() {
   );
 }
 
+const logos = ['Esri', 'DTN', 'Enterprise Holdings', 'Grubhub', 'Zeus Weather', 'Enline Energy', 'Milsoft', 'Everbridge'];
+
+function LogoStrip() {
+  return (
+    <section className="pb-20 sm:pb-24">
+      <div className="max-w-4xl mx-auto px-6 mb-6">
+        <p className="text-xs text-[#a1a1aa]/40 uppercase tracking-widest">Worked with across prior roles and engagements</p>
+      </div>
+      <div className="marquee-mask overflow-hidden">
+        <div className="marquee-track flex w-max">
+          {[...logos, ...logos].map((name, i) => (
+            <span
+              key={`${name}-${i}`}
+              className="shrink-0 px-8 sm:px-10 text-sm sm:text-base font-semibold text-[#a1a1aa]/25 uppercase tracking-[0.15em] select-none"
+            >
+              {name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Work() {
   return (
     <section id="work" className="py-20 sm:py-24 border-t border-[#1f1f28]">
@@ -285,6 +309,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Stats />
+        <LogoStrip />
         <Work />
         <Capabilities />
         <Contact />
