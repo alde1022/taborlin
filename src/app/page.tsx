@@ -62,7 +62,7 @@ const capabilities = [
   {
     title: 'Revenue & Partnerships',
     description:
-      'Enterprise deal structuring, executive relationship development, and strategic partnerships across energy, technology, and infrastructure. Direct experience navigating procurement, compliance, and multi-stakeholder sales cycles.',
+      'Enterprise Holdings deal structuring, executive relationship development, and strategic partnerships across energy, technology, and infrastructure. Direct experience navigating procurement, compliance, and multi-stakeholder sales cycles.',
   },
   {
     title: 'GTM & Strategy',
@@ -84,16 +84,16 @@ const capabilities = [
 const companies = [
   { name: 'Esri', className: 'font-black tracking-[0.06em] uppercase' },
   { name: 'DTN', className: 'font-black tracking-[0.2em] uppercase text-lg sm:text-xl' },
-  { name: 'Enterprise', className: 'font-medium tracking-[0.04em]' },
+  { name: 'Enterprise Holdings', className: 'font-medium tracking-[0.04em]' },
   { name: 'Grubhub', className: 'font-extrabold tracking-tight lowercase' },
   { name: 'Orpheus AI', className: 'font-semibold tracking-[0.04em]' },
-  { name: 'Enline', className: 'font-semibold tracking-[0.04em]' },
-  { name: 'Milsoft', className: 'font-bold tracking-[0.05em]' },
+  { name: 'Enline Energy', className: 'font-semibold tracking-[0.04em]' },
+  { name: 'Milsoft Utility Solutions', className: 'font-bold tracking-[0.05em]' },
   { name: 'Everbridge', className: 'font-semibold tracking-[0.08em] uppercase text-[13px] sm:text-sm' },
-  { name: 'AIG', className: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl' },
+  { name: 'American International Group', className: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl' },
   { name: 'Trueo', className: 'font-bold tracking-[0.06em]' },
   { name: 'GE Transportation', className: 'font-medium tracking-[0.03em]' },
-  { name: 'Crop Risk', className: 'font-medium tracking-[0.03em]' },
+  { name: 'Crop Risk Services', className: 'font-medium tracking-[0.03em]' },
 ];
 
 function Navbar() {
