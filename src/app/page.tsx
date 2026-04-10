@@ -128,8 +128,8 @@ function Hero() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="animate-fade-in">
           <h1 className="text-[2.15rem] sm:text-5xl lg:text-[3.5rem] font-semibold text-[#fafafa] tracking-tight leading-[1.18] sm:leading-[1.15]">
-            Building products and partnerships<br className="hidden sm:block" />
-            <span className="text-[#a1a1aa]">across software, data, and AI.</span>
+            <span className="block">Building products and partnerships</span>
+            <span className="block text-[#a1a1aa]">across software, data, and AI.</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-[#a1a1aa] max-w-2xl leading-relaxed">
             Taborlin ships products, structures enterprise deals, and executes go-to-market
