@@ -4,14 +4,14 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://taborlin.co'),
   title: {
-    default: 'Taborlin — Products, Growth, and Execution',
+    default: 'Taborlin — Product, Partnerships, and Execution',
     template: '%s — Taborlin',
   },
   description:
-    'AI-native operator building products, growth systems, and go-to-market strategies. Shipped multiple SaaS products from zero to market.',
+    'AI-native operator building products and closing enterprise deals across AI, energy, and technology. $1M+ in enterprise revenue. Multiple products shipped from zero.',
   openGraph: {
     title: 'Taborlin',
-    description: 'AI-native operator building products, growth systems, and go-to-market strategies.',
+    description: 'Product, partnerships, and execution across AI, energy, and enterprise.',
     url: 'https://taborlin.co',
     siteName: 'Taborlin',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Taborlin',
-    description: 'AI-native operator building products, growth systems, and go-to-market strategies.',
+    description: 'Product, partnerships, and execution across AI, energy, and enterprise.',
   },
   alternates: {
     canonical: 'https://taborlin.co',
@@ -43,10 +43,10 @@ export default function RootLayout({
               name: 'Taborlin',
               url: 'https://taborlin.co',
               description:
-                'AI-native operator building products, growth systems, and go-to-market strategies.',
+                'AI-native operator building products and closing enterprise deals across AI, energy, and technology.',
               sameAs: [
-                'https://spatix.io',
                 'https://cheaptokens.ai',
+                'https://spatix.io',
                 'https://gistools.io',
               ],
             }),

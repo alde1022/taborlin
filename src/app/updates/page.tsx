@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { updates } from '../data/updates';
 
 export const metadata: Metadata = {
-  title: 'Writing',
+  title: 'Updates',
   description:
-    'Notes on building products, going to market, and shipping — from Taborlin.',
+    'Updates from Taborlin — on building products, partnerships, and going to market.',
   alternates: {
     canonical: 'https://taborlin.co/updates',
   },
@@ -29,14 +29,8 @@ export default function UpdatesPage() {
             >
               Work
             </Link>
-            <Link
-              href="/updates"
-              className="text-sm text-[#fafafa]"
-            >
-              Writing
-            </Link>
             <a
-              href="mailto:alex@taborlin.co"
+              href="mailto:hello@taborlin.co"
               className="text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-3.5 py-1.5 rounded-md font-medium"
             >
               Contact
@@ -47,10 +41,10 @@ export default function UpdatesPage() {
 
       <main className="pt-32 pb-24 max-w-3xl mx-auto px-6">
         <h1 className="text-3xl font-semibold text-[#fafafa] mb-2">
-          Writing
+          Updates
         </h1>
         <p className="text-sm text-[#a1a1aa] mb-16">
-          Notes on building products, going to market, and shipping.
+          Notes on building, shipping, and going to market.
         </p>
 
         <div className="space-y-4">

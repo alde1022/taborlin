@@ -125,14 +125,8 @@ export default async function UpdatePage({
             >
               Work
             </Link>
-            <Link
-              href="/updates"
-              className="text-sm text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
-            >
-              Writing
-            </Link>
             <a
-              href="mailto:alex@taborlin.co"
+              href="mailto:hello@taborlin.co"
               className="text-sm text-[#06060B] bg-[#fafafa] hover:bg-[#e4e4e7] transition-colors px-3.5 py-1.5 rounded-md font-medium"
             >
               Contact
