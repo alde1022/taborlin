@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Taborlin — Product, Partnerships, and Execution',
+  title: 'Taborlin — Software, Data, and AI',
   description:
-    'AI-native operator building products and closing enterprise deals across AI, energy, and technology. $1M+ in enterprise revenue. Multiple products shipped from zero.',
+    'Building products and closing enterprise deals across software, data, and AI. $1M+ in enterprise revenue. Multiple products shipped from zero.',
   openGraph: {
-    title: 'Taborlin — Product, Partnerships, and Execution',
+    title: 'Taborlin — Software, Data, and AI',
     description:
-      'AI-native operator building products and closing enterprise deals across AI, energy, and technology.',
+      'Building products and closing enterprise deals across software, data, and AI.',
     url: 'https://taborlin.co',
     siteName: 'Taborlin',
     type: 'website',
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 const stats = [
   { value: '$1M+', label: 'Enterprise revenue generated' },
   { value: '20+', label: 'Strategic partnerships closed' },
-  { value: '4', label: 'Products shipped from zero' },
 ];
 
 const work = [
@@ -112,12 +111,12 @@ function Hero() {
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold text-[#fafafa] tracking-tight leading-[1.15]">
             Building products and partnerships<br className="hidden sm:block" />
-            <span className="text-[#a1a1aa]">across AI, energy, and enterprise.</span>
+            <span className="text-[#a1a1aa]">across software, data, and AI.</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-[#a1a1aa] max-w-2xl leading-relaxed">
             Taborlin ships products, structures enterprise deals, and executes go-to-market
             strategy. $1M+ in enterprise revenue generated. Multiple products launched
-            from zero. AI-native from day one.
+            from zero.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-8">
             <a
@@ -143,7 +142,7 @@ function Stats() {
   return (
     <section className="pb-20 sm:pb-24">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 border border-[#1f1f28] rounded-xl p-6 sm:p-8 bg-[#0a0a10]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 border border-[#1f1f28] rounded-xl p-6 sm:p-8 bg-[#0a0a10] max-w-xl">
           {stats.map((stat, i) => (
             <div key={stat.label} className={i < stats.length - 1 ? 'sm:border-r sm:border-[#1f1f28] sm:pr-6' : ''}>
               <p className="text-2xl sm:text-3xl font-semibold text-[#fafafa] tracking-tight">{stat.value}</p>
