@@ -179,6 +179,22 @@ function EsriLogo({ className = '' }: { className?: string }) {
   );
 }
 
+function OrpheusLogo({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Orpheus AI">
+      <path d="M14.5 1L9.5 10.5h4L7.5 23l3-9.5H6.5z" />
+    </svg>
+  );
+}
+
+function TrueoLogo({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Trueo">
+      <path d="M12 2L3 7.5v9L12 22l9-5.5v-9L12 2zm0 1.5l7.5 4.6v.4L12 13 4.5 8.5v-.4L12 3.5zM4.5 9.5L11.5 14v7l-7-4.3V9.5zm8 4.5l7-4.5v7.2l-7 4.3v-7z" />
+    </svg>
+  );
+}
+
 function LogoSet() {
   return (
     <>
@@ -188,13 +204,19 @@ function LogoSet() {
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-lg sm:text-2xl font-black tracking-[0.25em] uppercase">DTN</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-medium tracking-[0.05em]">Enterprise Holdings</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-base sm:text-xl font-extrabold tracking-tight lowercase">grubhub</span>
-      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-semibold tracking-[0.06em]">Zeus Weather</span>
+      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] flex items-center gap-2">
+        <OrpheusLogo className="h-5 sm:h-6" />
+        <span className="text-[13px] sm:text-base font-semibold tracking-[0.04em]">Orpheus AI</span>
+      </span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-semibold tracking-[0.04em]">Enline Energy</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-base sm:text-lg font-bold tracking-[0.06em]">Milsoft</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-sm sm:text-[17px] font-semibold tracking-[0.1em] uppercase">Everbridge</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-xl sm:text-2xl font-black tracking-[0.08em] uppercase">AIG</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-medium tracking-[0.04em]">Crop Risk Insurance</span>
-      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-base sm:text-lg font-bold tracking-[0.08em]">Trueo</span>
+      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] flex items-center gap-2">
+        <TrueoLogo className="h-5 sm:h-6" />
+        <span className="text-base sm:text-lg font-bold tracking-[0.08em]">Trueo</span>
+      </span>
     </>
   );
 }
