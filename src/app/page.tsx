@@ -127,7 +127,7 @@ function Hero() {
     <section className="pt-32 sm:pt-40 pb-16 sm:pb-20">
       <div className="max-w-4xl mx-auto px-6">
         <div className="animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold text-[#fafafa] tracking-tight leading-[1.15]">
+          <h1 className="text-[2.15rem] sm:text-5xl lg:text-[3.5rem] font-semibold text-[#fafafa] tracking-tight leading-[1.18] sm:leading-[1.15]">
             Building products and partnerships<br className="hidden sm:block" />
             <span className="text-[#a1a1aa]">across software, data, and AI.</span>
           </h1>
