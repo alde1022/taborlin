@@ -194,6 +194,7 @@ function LogoSet() {
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-sm sm:text-[17px] font-semibold tracking-[0.1em] uppercase">Everbridge</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-xl sm:text-2xl font-black tracking-[0.08em] uppercase">AIG</span>
       <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-[13px] sm:text-base font-medium tracking-[0.04em]">Crop Risk Insurance</span>
+      <span className="shrink-0 px-8 sm:px-12 select-none text-[#a1a1aa]/[0.22] text-base sm:text-lg font-bold tracking-[0.08em]">Trueo</span>
     </>
   );
 }
