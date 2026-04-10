@@ -23,52 +23,38 @@ const stats = [
   { value: '4', label: 'Products shipped — and counting' },
 ];
 
-const pillars = [
-  'Revenue & Partnerships',
-  'GTM & Strategy',
-  'Product & Execution',
-  'Software, Data & AI',
-] as const;
-
-type Pillar = typeof pillars[number];
-
-const work: {
-  title: string;
-  label: string;
-  url?: string;
-  description: string;
-  pillars: Pillar[];
-}[] = [
+const work = [
+  {
+    title: 'Atlas',
+    label: 'AI-Powered Outbound Engine',
+    url: 'https://atlas.taborlin.co',
+    status: 'Active',
+    description:
+      'Monitors social platforms and online communities to find people actively mentioning a target problem or topic. Surfaces high-intent signals and turns them into outbound opportunities — lead generation, distribution, and partnership pipeline on autopilot.',
+  },
   {
     title: 'CheapTokens',
     label: 'AI Compute Marketplace',
     url: 'https://cheaptokens.ai',
+    status: 'Shipped',
     description:
-      'Built and launched an AI credit marketplace with daily auctions and real-time bidding. Designed the product, pricing mechanics, and payment infrastructure from scratch. Currently onboarding early users and partners.',
-    pillars: ['Product & Execution', 'Software, Data & AI'],
+      'AI credit marketplace with daily auctions and real-time bidding. Designed the product, pricing mechanics, and payment infrastructure from scratch. Onboarding early users and partners.',
   },
   {
     title: 'Spatix',
-    label: 'GIS Platform',
+    label: 'Mapping Platform for AI Agents',
     url: 'https://spatix.io',
+    status: 'In development',
     description:
-      'Identified a gap between enterprise GIS tools and what most people actually need. Built and shipped a map creation platform for non-technical users — marketers, journalists, researchers. Organic acquisition through SEO and product-led growth.',
-    pillars: ['Product & Execution', 'GTM & Strategy'],
+      'Map creation platform built for AI agents and non-technical users. Designed to make geospatial data accessible without GIS expertise — upload data, generate maps, embed or share.',
   },
   {
     title: 'GISTools',
-    label: 'Developer Tools & Ecosystem',
+    label: 'Open Source GIS Software',
     url: 'https://gistools.io',
+    status: 'Open source',
     description:
-      'Built a utility suite for GIS file conversion and spatial analysis that runs entirely in the browser. Designed as an ecosystem complement to Spatix — capturing developer traffic through SEO and cross-selling into the platform.',
-    pillars: ['GTM & Strategy', 'Software, Data & AI'],
-  },
-  {
-    title: 'Atlas',
-    label: 'Internal Operations Platform',
-    description:
-      'Built an internal command center to manage multiple SaaS products from a single view — dev status, user metrics, revenue, and roadmap. The kind of operational tooling you build when running several products and need signal, not noise.',
-    pillars: ['Product & Execution', 'Software, Data & AI'],
+      'Free, browser-based GIS file conversion and spatial analysis tools. Built to capture students and knowledge workers searching for accessible geospatial software.',
   },
 ];
 
@@ -106,6 +92,7 @@ const companies = [
   { name: 'Everbridge', className: 'font-semibold tracking-[0.08em] uppercase text-[13px] sm:text-sm' },
   { name: 'AIG', className: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl' },
   { name: 'Trueo', className: 'font-bold tracking-[0.06em]' },
+  { name: 'GE Transportation', className: 'font-medium tracking-[0.03em]' },
   { name: 'Crop Risk', className: 'font-medium tracking-[0.03em]' },
 ];
 
@@ -241,16 +228,9 @@ function Work() {
               <p className="text-sm text-[#a1a1aa] leading-relaxed mb-4 max-w-2xl">
                 {item.description}
               </p>
-              <div className="flex flex-wrap gap-2">
-                {item.pillars.map((pillar) => (
-                  <span
-                    key={pillar}
-                    className="text-xs text-[#a1a1aa]/70 bg-[#16161e] border border-[#1f1f28] px-2.5 py-1 rounded-md"
-                  >
-                    {pillar}
-                  </span>
-                ))}
-              </div>
+              <span className="text-xs text-[#a1a1aa]/50 bg-[#16161e] border border-[#1f1f28] px-2.5 py-1 rounded-md">
+                {item.status}
+              </span>
             </div>
           ))}
         </div>
