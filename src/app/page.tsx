@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import LogoStrip from './LogoStrip';
 
 export const metadata: Metadata = {
   title: 'Taborlin — Software, Data, and AI',
@@ -81,21 +82,6 @@ const capabilities = [
   },
 ];
 
-const companies = [
-  { name: 'Esri', className: 'font-black tracking-[0.06em] uppercase' },
-  { name: 'DTN', className: 'font-black tracking-[0.2em] uppercase text-lg sm:text-xl' },
-  { name: 'Enterprise Holdings', className: 'font-medium tracking-[0.04em]' },
-  { name: 'Grubhub', className: 'font-extrabold tracking-tight lowercase' },
-  { name: 'Orpheus AI', className: 'font-semibold tracking-[0.04em]' },
-  { name: 'Enline Energy', className: 'font-semibold tracking-[0.04em]' },
-  { name: 'Milsoft Utility Solutions', className: 'font-bold tracking-[0.05em]' },
-  { name: 'Everbridge', className: 'font-semibold tracking-[0.08em] uppercase text-[13px] sm:text-sm' },
-  { name: 'American International Group', className: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl' },
-  { name: 'Trueo', className: 'font-bold tracking-[0.06em]' },
-  { name: 'GE Transportation', className: 'font-medium tracking-[0.03em]' },
-  { name: 'Crop Risk Services', className: 'font-medium tracking-[0.03em]' },
-];
-
 function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#06060B]/80 backdrop-blur-md border-b border-[#1f1f28]/50">
@@ -166,28 +152,6 @@ function Stats() {
               <p className="text-2xl sm:text-3xl font-semibold text-[#fafafa] tracking-tight">{stat.value}</p>
               <p className="text-xs sm:text-sm text-[#a1a1aa]/60 mt-1">{stat.label}</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LogoStrip() {
-  return (
-    <section className="pb-20 sm:pb-24">
-      <div className="max-w-4xl mx-auto px-6 mb-8 text-center">
-        <p className="text-xs text-[#a1a1aa]/40 uppercase tracking-widest">Selected companies worked with</p>
-      </div>
-      <div className="marquee-mask overflow-hidden">
-        <div className="marquee-track flex items-center w-max">
-          {[...companies, ...companies].map((co, i) => (
-            <span
-              key={`${co.name}-${i}`}
-              className={`shrink-0 px-7 sm:px-10 select-none text-[#a1a1aa]/[0.3] text-sm sm:text-base ${co.className}`}
-            >
-              {co.name}
-            </span>
           ))}
         </div>
       </div>
