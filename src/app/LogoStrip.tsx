@@ -46,9 +46,6 @@ const companies: Company[] = [
   { name: 'Everbridge', logo: '/logos/everbridge.svg' },
   { name: 'American International Group', logo: '/logos/aig.svg' },
   { name: 'Trueo', textClassName: 'font-bold tracking-[0.06em]' },
-  // Wabtec is GE Transportation post-2019 spin-merge; set the visible
-  // name to match how people recognize the company today.
-  { name: 'GE Transportation (Wabtec)', logo: '/logos/wabtec.svg' },
   { name: 'Crop Risk Services', textClassName: 'font-medium tracking-[0.03em]' },
 ];
 
