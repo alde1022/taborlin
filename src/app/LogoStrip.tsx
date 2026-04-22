@@ -39,13 +39,16 @@ const companies: Company[] = [
   { name: 'DTN', logo: '/logos/dtn.svg' },
   { name: 'Enterprise Holdings', logo: '/logos/enterpriseholdings.svg' },
   { name: 'Grubhub', logo: '/logos/grubhub.svg' },
+  { name: 'WeatherXM', logo: '/logos/weatherxm.png' },
   { name: 'Orpheus AI', textClassName: 'font-semibold tracking-[0.04em]' },
   { name: 'Enline Energy', textClassName: 'font-semibold tracking-[0.04em]' },
   { name: 'Milsoft Utility Solutions', textClassName: 'font-bold tracking-[0.05em]' },
   { name: 'Everbridge', logo: '/logos/everbridge.svg' },
-  { name: 'AIG', logo: '/logos/aig.svg' },
+  { name: 'American International Group', logo: '/logos/aig.svg' },
   { name: 'Trueo', textClassName: 'font-bold tracking-[0.06em]' },
-  { name: 'GE Transportation', logo: '/logos/wabtec.svg' },
+  // Wabtec is GE Transportation post-2019 spin-merge; set the visible
+  // name to match how people recognize the company today.
+  { name: 'GE Transportation (Wabtec)', logo: '/logos/wabtec.svg' },
   { name: 'Crop Risk Services', textClassName: 'font-medium tracking-[0.03em]' },
 ];
 
@@ -55,6 +58,8 @@ function LogoItem({ company }: { company: Company }) {
   if (!company.logo || failed) {
     return (
       <span
+        title={company.name}
+        aria-label={company.name}
         className={`logo-text shrink-0 px-7 sm:px-10 select-none ${company.textClassName ?? ''}`}
       >
         {company.fallback ?? company.name}
@@ -67,6 +72,7 @@ function LogoItem({ company }: { company: Company }) {
     <img
       src={company.logo}
       alt={company.name}
+      title={company.name}
       loading="lazy"
       decoding="async"
       onError={() => setFailed(true)}
