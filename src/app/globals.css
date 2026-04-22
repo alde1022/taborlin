@@ -44,6 +44,16 @@ html {
 
 .marquee-track {
   animation: marquee 40s linear infinite;
+  /*
+   * The fade-at-edges mask lives on the track, not on the outer
+   * wrapper, because mask-image clips every descendant (including
+   * ::after pseudo-elements that extend above the box via negative
+   * top positioning). Applying the mask here means the outer wrapper
+   * only has to clip horizontally while tooltips rendered above each
+   * logo cell can still escape the container vertically.
+   */
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .marquee-track:hover {
@@ -56,15 +66,13 @@ html {
    * section) while letting tooltips above each logo render outside
    * the container vertically.
    *
-   * `overflow-x: hidden; overflow-y: visible;` looks correct but is
-   * coerced by the CSS spec to `overflow-y: auto` whenever the other
-   * axis is non-visible. `overflow: clip` on one axis sidesteps that
+   * `overflow-x: hidden; overflow-y: visible;` is coerced by the CSS
+   * spec to `overflow-y: auto` whenever the other axis is
+   * non-visible. `overflow: clip` on one axis sidesteps that
    * coercion and lets the other axis stay visible.
    */
   overflow-x: clip;
   overflow-y: visible;
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .logo-item {
