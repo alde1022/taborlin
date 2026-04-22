@@ -95,7 +95,13 @@ export default function LogoStrip() {
           Selected companies worked with
         </p>
       </div>
-      <div className="marquee-mask overflow-hidden">
+      {/*
+        The mask uses overflow-x:hidden (via .marquee-mask) rather than
+        overflow:hidden on all axes, so vertical tooltips above the
+        strip are not clipped. The horizontal mask gradient still
+        fades the marquee into the page edges.
+      */}
+      <div className="marquee-mask">
         <div className="marquee-track flex items-center gap-12 sm:gap-16 w-max">
           {[...companies, ...companies].map((co, i) => (
             <LogoItem key={`${co.name}-${i}`} company={co} />

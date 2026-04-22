@@ -51,6 +51,11 @@ html {
 }
 
 .marquee-mask {
+  /* Only clip horizontally, so tooltips rendered above the strip are
+     not cut off by the marquee container. The mask gradient still
+     handles the soft fade at the left/right edges. */
+  overflow-x: hidden;
+  overflow-y: visible;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
