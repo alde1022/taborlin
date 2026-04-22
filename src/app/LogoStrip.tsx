@@ -45,8 +45,7 @@ const companies: Company[] = [
   { name: 'Milsoft Utility Solutions', textClassName: 'font-bold tracking-[0.05em]' },
   { name: 'Everbridge', logo: '/logos/everbridge.svg' },
   { name: 'American International Group', logo: '/logos/aig.svg' },
-  { name: 'Trueo', textClassName: 'font-bold tracking-[0.06em]' },
-  { name: 'Crop Risk Services', textClassName: 'font-medium tracking-[0.03em]' },
+  { name: 'Trueo', logo: '/logos/trueo.png' },
 ];
 
 function LogoItem({ company }: { company: Company }) {
