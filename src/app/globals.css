@@ -74,17 +74,16 @@ html {
 }
 
 .logo-text {
-  font-family: Inter, sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  color: rgba(245, 245, 240, 0.55);
+  /* Matches the tone of .logo-item so the strip reads as one unified
+     row regardless of whether individual entries are images or text. */
+  font-family: var(--font-geist-sans), Inter, sans-serif;
+  color: rgba(245, 245, 240, 0.3);
   white-space: nowrap;
   transition: color 0.25s ease;
 }
 
 .logo-text:hover {
-  color: rgba(245, 245, 240, 0.95);
+  color: rgba(245, 245, 240, 0.7);
 }
 
 ::selection {
