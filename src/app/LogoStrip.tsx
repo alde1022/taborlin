@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 type Company = {
-  /** Display name. Used as alt text and as the text fallback. */
+  /** Display name. Used as alt text and the text fallback. */
   name: string;
   /**
    * Optional self-hosted logo path under /public. When provided, the
@@ -11,48 +11,41 @@ type Company = {
    * text fallback only kicks in if the request fails. When omitted,
    * the company renders as a styled text wordmark.
    *
-   * Why self-hosted: external CDN logo services (Brandfetch, Clearbit,
-   * etc.) now require API keys or return HTML error pages on rate
-   * limit, which renders as broken images on the homepage. Local SVGs
-   * are deterministic and free.
+   * Why self-hosted: external CDNs (Brandfetch, Clearbit) now require
+   * client IDs or return HTML error pages on rate limit, which renders
+   * as broken images on the homepage. Local SVGs are free and
+   * deterministic.
    */
   logo?: string;
   /** Short text shown when the logo fails or is intentionally absent. */
   fallback?: string;
-  /** Optional tailwind classes layered on top of .logo-text for the
-   * text fallback (for brand-specific type treatments). */
+  /**
+   * Tailwind classes layered on top of .logo-text for the text fallback
+   * (used for brand-specific type treatments).
+   */
   textClassName?: string;
 };
 
 /**
- * Curated "selected companies worked with" list. Keep in order — this
- * is also the visual order in the scrolling strip.
+ * Curated "selected companies worked with" list. Order here = visual
+ * order in the scrolling strip.
  *
- * To switch a company to a real logo:
- *   1. Download the SVG (prefer monochrome/mark-only) to
- *      public/logos/<slug>.svg
- *   2. Set `logo: '/logos/<slug>.svg'` below
- *   3. The .logo-item CSS in globals.css will unify it to muted
- *      off-white automatically, so the source color doesn't matter.
+ * Logos live in public/logos/*.svg. The .logo-item CSS in globals.css
+ * re-colors any SVG to muted off-white automatically, so source color
+ * does not matter. See public/logos/README.md for how to add more.
  */
 const companies: Company[] = [
-  { name: 'Esri', textClassName: 'font-black tracking-[0.06em] uppercase' },
-  { name: 'DTN', textClassName: 'font-black tracking-[0.2em] uppercase text-lg sm:text-xl' },
-  { name: 'Enterprise Holdings', textClassName: 'font-medium tracking-[0.04em]' },
-  { name: 'Grubhub', textClassName: 'font-extrabold tracking-tight lowercase' },
+  { name: 'Esri', logo: '/logos/esri.svg' },
+  { name: 'DTN', logo: '/logos/dtn.svg' },
+  { name: 'Enterprise Holdings', logo: '/logos/enterpriseholdings.svg' },
+  { name: 'Grubhub', logo: '/logos/grubhub.svg' },
   { name: 'Orpheus AI', textClassName: 'font-semibold tracking-[0.04em]' },
   { name: 'Enline Energy', textClassName: 'font-semibold tracking-[0.04em]' },
   { name: 'Milsoft Utility Solutions', textClassName: 'font-bold tracking-[0.05em]' },
-  {
-    name: 'Everbridge',
-    textClassName: 'font-semibold tracking-[0.08em] uppercase text-[13px] sm:text-sm',
-  },
-  {
-    name: 'American International Group',
-    textClassName: 'font-black tracking-[0.15em] uppercase text-lg sm:text-xl',
-  },
+  { name: 'Everbridge', logo: '/logos/everbridge.svg' },
+  { name: 'AIG', logo: '/logos/aig.svg' },
   { name: 'Trueo', textClassName: 'font-bold tracking-[0.06em]' },
-  { name: 'GE Transportation', textClassName: 'font-medium tracking-[0.03em]' },
+  { name: 'GE Transportation', logo: '/logos/wabtec.svg' },
   { name: 'Crop Risk Services', textClassName: 'font-medium tracking-[0.03em]' },
 ];
 
