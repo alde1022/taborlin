@@ -51,10 +51,17 @@ html {
 }
 
 .marquee-mask {
-  /* Only clip horizontally, so tooltips rendered above the strip are
-     not cut off by the marquee container. The mask gradient still
-     handles the soft fade at the left/right edges. */
-  overflow-x: hidden;
+  /*
+   * Clip horizontally (so the scrolling marquee doesn't escape the
+   * section) while letting tooltips above each logo render outside
+   * the container vertically.
+   *
+   * `overflow-x: hidden; overflow-y: visible;` looks correct but is
+   * coerced by the CSS spec to `overflow-y: auto` whenever the other
+   * axis is non-visible. `overflow: clip` on one axis sidesteps that
+   * coercion and lets the other axis stay visible.
+   */
+  overflow-x: clip;
   overflow-y: visible;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
